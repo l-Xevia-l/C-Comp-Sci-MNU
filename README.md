@@ -1,2 +1,1 @@
-# C-Comp-Sci-MNU
-C++ Comp-Sci MNU
+All of my current programs from the MNU C++ course.
