@@ -26,13 +26,25 @@ using namespace std;
 
 int main() {
 
-    Mastermind code1{"Jack"};
+    Mastermind code1{1};
+    Mastermind code2{2};
+    Mastermind code3{3};
+    Mastermind code4{4};
     
     code1.createCodeColor();
+    code2.createCodeColor();
+    code3.createCodeColor();
+    code4.createCodeColor();
 
-    int codeColor1 = code1.getCodeColor();
+    string codeColor1 = code1.getCodeColor();
+    string codeColor2 = code2.getCodeColor();
+    string codeColor3 = code3.getCodeColor();
+    string codeColor4 = code4.getCodeColor();
 
-    cout << ;
+    cout << codeColor1;
+    cout << codeColor2;
+    cout << codeColor3;
+    cout << codeColor4;
 
     return 0;
 }
