@@ -14,9 +14,10 @@ Purpose: Provide class functions for the driver program
 #include <cstdlib>
 #include <ctime>
 #include <String>
+#include <chrono>
+#include <thread>
 
 using namespace std;
-
 
 class Mastermind {
 public:
@@ -24,17 +25,18 @@ public:
         : positiion{pos} {
     }
 
-    void createCodeColor(){
-        //srand(static_cast<unsigned int>(time(0)));
-        // Assign all 6 colors to different numbers, then randomize said numbers for a code.
+    void createCode(){
+        // Declare variables for storing the random number (num) and the color associated with that number (code).
         int num;
         string code;
         num = 1 + rand() %  6;
 
+    // selects a color based on the value of num, which will be a random number between 1 and 6.
+        // Creates a random color for codePos1
         switch (num)
         {
         case 1:
-            code = "R";
+        code = "R";
             break;
         case 2:
             code = "O";
@@ -52,15 +54,130 @@ public:
             code = "P";
             break;
         default:
+            cout << "Something went very, very, very wrong in the Prog1JGeis.h file when assigning the color based on a number.";
             break;
         }
+        
+        codePos1 = code;
+        cout << "\ncodePos1 created" << codePos1 << endl;
 
-        masterCode = code;
+
+        // Creates a random color for codePos2
+        do {
+            num = 1 + rand() %  6;
+
+            // selects a color based on the value of num, which will be a random number between 1 and 6.
+            switch (num)
+            {
+            case 1:
+                code = "R";
+                break;
+            case 2:
+                code = "O";
+                break;
+            case 3:
+                code = "Y";
+                break;
+            case 4:
+                code = "G";
+                break;
+            case 5:
+                code = "B";
+                break;
+            case 6:
+                code = "P";
+                break;
+            default:
+                cout << "Something went very, very, very wrong in the Prog1JGeis.h file when assigning the color based on a number.";
+                break;
+            }
+            codePos2 = code;
+            cout << "codePos2 created" << codePos2 << endl;
+        } while (codePos1 == codePos2);
+
+        // Creates a random color for codePos3
+        do { 
+            num = 1 + rand() %  6;
+
+            // selects a color based on the value of num, which will be a random number between 1 and 6.
+            switch (num)
+            {
+            case 1:
+                code = "R";
+                break;
+            case 2:
+                code = "O";
+                break;
+            case 3:
+                code = "Y";
+                break;
+            case 4:
+                code = "G";
+                break;
+            case 5:
+                code = "B";
+                break;
+            case 6:
+                code = "P";
+                break;
+            default:
+                cout << "Something went very, very, very wrong in the Prog1JGeis.h file when assigning the color based on a number.";
+                break;
+            }
+            codePos3 = code;
+            cout << "codePos3 created" << codePos3 << endl;
+        } while ((codePos3 == codePos1) || (codePos3 == codePos2));
+
+        // Creates a random color for codePos4
+        do {
+            num = 1 + rand() %  6;
+
+            // selects a color based on the value of num, which will be a random number between 1 and 6.
+            switch (num)
+            {
+            case 1:
+                code = "R";
+                break;
+            case 2:
+                code = "O";
+                break;
+            case 3:
+                code = "Y";
+                break;
+            case 4:
+                code = "G";
+                break;
+            case 5:
+                code = "B";
+                break;
+            case 6:
+                code = "P";
+                break;
+            default:
+                cout << "Something went very, very, very wrong in the Prog1JGeis.h file when assigning the color based on a number.";
+                break;
+            }
+            codePos4 = code;
+            cout << "codePos4 created" << codePos4 << endl;
+        } while (((codePos4 == codePos1) || (codePos4 == codePos2)) || (codePos4 == codePos3));
     }
-    string getCodeColor() {
-        return masterCode;
+    string getCodePos1() {
+        return codePos1;
     }
+    string getCodePos2() {
+        return codePos2;
+    }
+    string getCodePos3() {
+        return codePos3;
+    }
+    string getCodePos4() {
+        return codePos4;
+    }
+
 private:
     int positiion{};
-    string masterCode{};
+    string codePos1{};
+    string codePos2{};
+    string codePos3{};
+    string codePos4{};
 };
