@@ -59,7 +59,6 @@ public:
         }
         
         codePos1 = code;
-        cout << "\ncodePos1 created" << codePos1 << endl;
 
 
         // Creates a random color for codePos2
@@ -92,7 +91,6 @@ public:
                 break;
             }
             codePos2 = code;
-            cout << "codePos2 created" << codePos2 << endl;
         } while (codePos1 == codePos2);
 
         // Creates a random color for codePos3
@@ -125,7 +123,6 @@ public:
                 break;
             }
             codePos3 = code;
-            cout << "codePos3 created" << codePos3 << endl;
         } while ((codePos3 == codePos1) || (codePos3 == codePos2));
 
         // Creates a random color for codePos4
@@ -158,7 +155,6 @@ public:
                 break;
             }
             codePos4 = code;
-            cout << "codePos4 created" << codePos4 << endl;
         } while (((codePos4 == codePos1) || (codePos4 == codePos2)) || (codePos4 == codePos3));
     }
     string getCodePos1() {
